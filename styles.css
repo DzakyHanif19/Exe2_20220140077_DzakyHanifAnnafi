@@ -1,0 +1,132 @@
+/* Font and Color Variables */
+:root {
+    --primary-color: #D4A373;
+    --secondary-color: #3A3A3A;
+    --background-color: #F5F5DC;
+    --highlight-color: #C88D57;
+    --text-color: #2D2D2D;
+    --link-color: #B88A44;
+    --link-hover-color: #A87435;
+    --font-family: 'Roboto', sans-serif;
+}
+
+/* Reset some default styles */
+body, h1, h2, p, ul, li, input, select, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Styles */
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.sidebar {
+    background-color: var(--primary-color);
+    color: white;
+    height: 100vh;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+}
+
+.nav-link.active {
+    background-color: var(--highlight-color);
+}
+
+.nav-link:hover {
+    color: var(--link-hover-color);
+    background-color: var(--highlight-color);
+}
+
+.main {
+    background-color: var(--background-color);
+    padding: 20px;
+}
+
+/* Card Styles */
+/* Card Container Styles */
+.card {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-img-top {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: auto; /* Pushes the text towards the bottom */
+}
+
+.card-text {
+    color: var(--background-color);
+    margin-bottom: auto; /* Pushes the text towards the bottom */
+}
+
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--secondary-color);
+    border: none;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--highlight-color);
+}
+
+/* Form Styles */
+.form-group label {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid var(--highlight-color);
+}
+
+#bookingFormContainer {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

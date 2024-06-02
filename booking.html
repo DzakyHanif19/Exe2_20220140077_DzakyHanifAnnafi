@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembookingan Antrian</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="booking.html">
+                                <i class="fas fa-calendar-alt"></i> Pembookingan Antrian
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="barbers.html">
+                                <i class="fas fa-user"></i> Pilihan Tukang Cukur
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="menu.html">
+                                <i class="fas fa-utensils"></i> Menu Makanan & Minuman
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Pembookingan Antrian</h1>
+                </div>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="name">Nama:</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Nomor Telepon</label>
+                        <input type="text" class="form-control" id="number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Tanggal:</label>
+                        <input type="date" class="form-control" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Waktu:</label>
+                        <input type="time" class="form-control" id="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="barber">Pilih Tukang Cukur:</label>
+                        <select class="form-control" id="barber" required>
+                            <option value="Tukang Cukur 1">Tukang Cukur 1</option>
+                            <option value="Tukang Cukur 2">Tukang Cukur 2</option>
+                            <option value="Tukang Cukur 3">Tukang Cukur 3</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        Dzaky Hanif Annafi - Pengembangan Desain website
+        <br>
+        &copy 2024
+      </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="scripts.js"></script>
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const barber = document.getElementById('barber').value;
+
+        alert(`Nama: ${name}\nTanggal: ${date}\nWaktu: ${time}\nTukang Cukur: ${barber}`);
+    });
+</script>
+</body>
+</html>

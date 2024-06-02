@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Makanan yang Tersedia</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="index.html">
+                                <i class="fas fa-home"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="booking.html">
+                                <i class="fas fa-calendar-alt"></i> Pembookingan Antrian
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="barbers.html">
+                                <i class="fas fa-user"></i> Pilihan Tukang Cukur
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="menu.html">
+                                <i class="fas fa-utensils"></i> Menu Makanan & Minuman
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 main">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Menu Makanan dan Minuman yang Tersedia</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="PICT.jpg" class="card-img-top" alt="Makanan 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Nasi Goreng Seafood</h5>
+                                <p class="card-text">Rp28.000</p>
+                                <button class="btn btn-primary" onclick="openOrderForm('Nasi Goreng Seafood', 'Rp28.000')">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="foto.jpg" class="card-img-top" alt="Makanan 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Nasi Goreng</h5>
+                                <p class="card-text">Rp23.000</p>
+                                <button class="btn btn-primary" onclick="openOrderForm('Nasi Goreng', 'Rp23.000')">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="ya.jpg" class="card-img-top" alt="Makanan 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Kwetiauw</h5>
+                                <p class="card-text">Rp20.000</p>
+                                <button class="btn btn-primary" onclick="openOrderForm('Kwetiauw', 'Rp20.000')">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="pa.jpg" class="card-img-top" alt="Minuman 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Air Mineral</h5>
+                                <p class="card-text">Rp5.000</p>
+                                <button class="btn btn-primary" onclick="openOrderForm('Air Mineral', 'Rp5.000')">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="wa.jpg" class="card-img-top" alt="Minuman 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Caffe Latte Hot/Ice</h5>
+                                <p class="card-text">Rp15.000</p>
+                                <button class="btn btn-primary" onclick="openOrderForm('Caffe Latte Hot/Ice', 'Rp15.000')">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="uy.png" class="card-img-top" alt="Minuman 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Nescafe</h5>
+                                <p class="card-text">Rp8.000</p>
+                                <button class="btn btn-primary" onclick="openOrderForm('Nescafe', 'Rp8.000')">Beli</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Order Form Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Form Pembelian</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="itemName">Nama Makanan/Minuman</label>
+                            <input type="text" class="form-control" id="itemName" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemPrice">Harga</label>
+                            <input type="text" class="form-control" id="itemPrice" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerName">Nama Anda</label>
+                            <input type="text" class="form-control" id="customerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="itemQuantity">Jumlah</label>
+                            <input type="number" class="form-control" id="itemQuantity" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        Dzaky Hanif Annafi - Pengembangan Desain website
+        <br>
+        &copy 2024
+      </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function openOrderForm(itemName, itemPrice) {
+            $('#itemName').val(itemName);
+            $('#itemPrice').val(itemPrice);
+            $('#orderModal').modal('show');
+        }
+
+        $('#orderForm').on('submit', function(event) {
+            event.preventDefault();
+            let name = $('#customerName').val();
+            let quantity = $('#itemQuantity').val();
+            alert(`Terima kasih ${name}, Anda telah memesan ${quantity} item(s).`);
+            $('#orderModal').modal('hide');
+        });
+    </script>
+</body>
+</html>
